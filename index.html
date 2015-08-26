@@ -13,16 +13,17 @@
         <div class="container">
             <h1>Fruit and Veggies</h1>
             <div class="row">
-                <div class="col-sm-4">
-                    <table class="table">
+                <div class="col-sm-4" ng-controller="Separator">
+                    <table class="table" >
                         <thead>
                             <tr>
                                 <th>Fruit</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
+                        <tbody >
+                            <tr ng-model="fruits" ng-repeat="y in fruits">
+                                <td >{{y}}<a href="#">
+                                  <span class="glyphicon glyphicon-arrow-right" ng-click="fruitAddToFruitsAndVeggie($index)"></span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -36,16 +37,16 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="x in fruitsAndVeggies">
-                                <td> <a href="#">
-                                      <span class="glyphicon glyphicon-arrow-left"></span>
+                                <td ng-model="fruitsAndVeggies"> <a href="#">
+                                      <span class="glyphicon glyphicon-arrow-left" ng-click="addToFruits($index)"></span>
                                     </a>{{x}}<a href="#">
-                                  <span class="glyphicon glyphicon-arrow-right"></span>
+                                  <span class="glyphicon glyphicon-arrow-right" ng-click="addToVeggie($index)"></span>
                                 </a></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4" ng-controller="Separator">
                     <table class="table">
                         <thead>
                             <tr>
@@ -53,8 +54,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
+                            <tr ng-repeat="z in veggies">
+                                <td ng-model="veggies"><a href="#">
+                                      <span class="glyphicon glyphicon-arrow-left" ng-click="veggieAddToFruitsAndVeggie($index)"></span>
+                                    </a>{{z}}</td>
                             </tr>
                         </tbody>
                     </table>
