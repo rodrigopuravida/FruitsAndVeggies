@@ -36,7 +36,11 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="x in fruitsAndVeggies">
-                                <td >{{x}}</td>
+                                <td> <a href="#">
+                                      <span class="glyphicon glyphicon-arrow-left"></span>
+                                    </a>{{x}}<a href="#">
+                                  <span class="glyphicon glyphicon-arrow-right"></span>
+                                </a></td>
                             </tr>
                         </tbody>
                     </table>
