@@ -55,10 +55,10 @@ function shuffle(o){
 
 function validateIfWin(item) {
   if ($scope.fruitsAndVeggies.length !== 0) {
-    alert('Still items to sort');
+    console.log('Still items to sort');
     return;
   }
-
+    // console.log(item);
     else if (item === 'fruits') {
       if($scope.fruits.sort().join(',')=== fruits.sort().join(',')){
         alert('You have won');
